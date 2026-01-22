@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://chbpiwwxc5mp2"]
+
+[ext_resource type="Script" uid="uid://cmmh17r1gdq1l" path="res://items/Scripts/item_data.gd" id="1_becff"]
+[ext_resource type="Script" uid="uid://c7grt0shs7ns7" path="res://items/item_effects/item_effect.gd" id="1_uj5p3"]
+[ext_resource type="Texture2D" uid="uid://b2rdkdwfytd5h" path="res://items/Sprites/items.png" id="2_mwerj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj5p3"]
+atlas = ExtResource("2_mwerj")
+region = Rect2(64, 0, 32, 32)
+
+[resource]
+script = ExtResource("1_becff")
+name = "Stone"
+description = "The Rock That Witnessed Everything and Said Nothing"
+texture = SubResource("AtlasTexture_uj5p3")
+metadata/_custom_type_script = "uid://cmmh17r1gdq1l"

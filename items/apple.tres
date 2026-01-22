@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=8 format=3 uid="uid://btgy1pxbpcf2i"]
+
+[ext_resource type="Script" uid="uid://c7grt0shs7ns7" path="res://items/item_effects/item_effect.gd" id="1_dumep"]
+[ext_resource type="Script" uid="uid://cxp2y7ckfqaev" path="res://items/item_effects/item_effect_heal.gd" id="2_rj1s8"]
+[ext_resource type="Script" uid="uid://cmmh17r1gdq1l" path="res://items/Scripts/item_data.gd" id="2_xmv7l"]
+[ext_resource type="AudioStream" uid="uid://xdhejrrgp72p" path="res://items/item_effects/hp-up.wav" id="3_ia5ia"]
+[ext_resource type="Texture2D" uid="uid://b2rdkdwfytd5h" path="res://items/Sprites/items.png" id="5_hbuy5"]
+
+[sub_resource type="Resource" id="Resource_qgymf"]
+script = ExtResource("2_rj1s8")
+sound = ExtResource("3_ia5ia")
+metadata/_custom_type_script = "uid://cxp2y7ckfqaev"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26tcx"]
+atlas = ExtResource("5_hbuy5")
+region = Rect2(192, 0, 32, 32)
+
+[resource]
+script = ExtResource("2_xmv7l")
+name = "Apple"
+description = "Doctor Repellent (+Small HP, −1 doctor visit)"
+texture = SubResource("AtlasTexture_26tcx")
+effects = Array[ExtResource("1_dumep")]([SubResource("Resource_qgymf")])
+metadata/_custom_type_script = "uid://cmmh17r1gdq1l"
