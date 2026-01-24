@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://dl6owprmny0gu"]
 
-[ext_resource type="Script" uid="uid://c7grt0shs7ns7" path="res://items/item_effects/item_effect.gd" id="1_gbvxt"]
-[ext_resource type="Script" uid="uid://cmmh17r1gdq1l" path="res://items/Scripts/item_data.gd" id="1_m7x72"]
-[ext_resource type="Texture2D" uid="uid://b2rdkdwfytd5h" path="res://items/Sprites/items.png" id="2_o2n4o"]
+[ext_resource type="Script" uid="uid://c7grt0shs7ns7" path="res://Items/item_effects/item_effect.gd" id="1_gbvxt"]
+[ext_resource type="Script" uid="uid://cmmh17r1gdq1l" path="res://Items/Scripts/item_data.gd" id="1_m7x72"]
+[ext_resource type="Texture2D" uid="uid://b2rdkdwfytd5h" path="res://Items/Sprites/items.png" id="2_o2n4o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbvxt"]
 atlas = ExtResource("2_o2n4o")

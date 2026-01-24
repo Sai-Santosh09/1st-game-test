@@ -1,20 +1,20 @@
-[gd_scene load_steps=43 format=3 uid="uid://6ule42j8g1yt"]
+[gd_scene load_steps=44 format=3 uid="uid://6ule42j8g1yt"]
 
-[ext_resource type="Script" uid="uid://cdhwtta44ndoy" path="res://Player/Scripts/player.gd" id="1_4ntmi"]
-[ext_resource type="Texture2D" uid="uid://csemyd58b2mot" path="res://Player/Sprites/PlayerSprite02.png" id="2_d5pnc"]
-[ext_resource type="Texture2D" uid="uid://b2c4iaq5mgini" path="res://Player/Sprites/AttackSprite01.png" id="3_85eyu"]
-[ext_resource type="Script" uid="uid://dfbtnp13shjee" path="res://Player/Scripts/player_state_machine.gd" id="3_btcbx"]
-[ext_resource type="Script" uid="uid://dkt318guwmgww" path="res://Player/Scripts/state_idle.gd" id="4_gwnis"]
-[ext_resource type="Texture2D" uid="uid://2job0hdpf3uc" path="res://Player/Sprites/Shadow.png" id="4_gxll4"]
-[ext_resource type="Script" uid="uid://cpoidgvwsj6a6" path="res://Player/Scripts/state_walk.gd" id="5_k53q1"]
-[ext_resource type="Script" uid="uid://dplt40fh2hg7g" path="res://Player/Scripts/state_attack.gd" id="6_w8ecf"]
-[ext_resource type="AudioStream" uid="uid://cd1phkjc6hlum" path="res://Player/Audio/SwordSwoosh.wav" id="8_su5ja"]
-[ext_resource type="PackedScene" uid="uid://78osin78fkgk" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="10_35vjg"]
-[ext_resource type="Script" uid="uid://j7fdya2uy74o" path="res://Player/Scripts/PlayerInteractionHost.gd" id="10_bugwf"]
-[ext_resource type="Script" uid="uid://d06g4vmqe1ffv" path="res://Player/Scripts/state_stun.gd" id="11_3o0p1"]
-[ext_resource type="Script" uid="uid://bb3f045c7uju0" path="res://Player/Scripts/PlayerCamera.gd" id="11_jeege"]
-[ext_resource type="PackedScene" uid="uid://dt17vre5svkm3" path="res://GeneralNodes/Hitboxes/HitBox.tscn" id="13_4vt3h"]
-[ext_resource type="AudioStream" uid="uid://b6hrob0ihffbe" path="res://Player/Audio/hit_player.wav" id="15_bqksd"]
+[ext_resource type="Script" uid="uid://cdhwtta44ndoy" path="res://Player/Scripts/player.gd" id="1_dkpta"]
+[ext_resource type="Texture2D" uid="uid://csemyd58b2mot" path="res://Player/Sprites/PlayerSprite02.png" id="2_lfmf2"]
+[ext_resource type="Texture2D" uid="uid://b2c4iaq5mgini" path="res://Player/Sprites/AttackSprite01.png" id="3_pisgm"]
+[ext_resource type="Texture2D" uid="uid://2job0hdpf3uc" path="res://Player/Sprites/Shadow.png" id="4_b1ygp"]
+[ext_resource type="PackedScene" uid="uid://78osin78fkgk" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="5_o28un"]
+[ext_resource type="Script" uid="uid://dfbtnp13shjee" path="res://Player/Scripts/player_state_machine.gd" id="6_n471f"]
+[ext_resource type="Script" uid="uid://dkt318guwmgww" path="res://Player/Scripts/state_idle.gd" id="7_7emwf"]
+[ext_resource type="Script" uid="uid://cpoidgvwsj6a6" path="res://Player/Scripts/state_walk.gd" id="8_hshwv"]
+[ext_resource type="Script" uid="uid://dplt40fh2hg7g" path="res://Player/Scripts/state_attack.gd" id="9_gpjlu"]
+[ext_resource type="AudioStream" uid="uid://cd1phkjc6hlum" path="res://Player/Audio/SwordSwoosh.wav" id="10_8mwp6"]
+[ext_resource type="Script" uid="uid://d06g4vmqe1ffv" path="res://Player/Scripts/state_stun.gd" id="11_qemgg"]
+[ext_resource type="Script" uid="uid://bb3f045c7uju0" path="res://Player/Scripts/PlayerCamera.gd" id="12_8viyr"]
+[ext_resource type="Script" uid="uid://j7fdya2uy74o" path="res://Player/Scripts/PlayerInteractionHost.gd" id="13_sm0op"]
+[ext_resource type="PackedScene" uid="uid://dt17vre5svkm3" path="res://GeneralNodes/Hitboxes/HitBox.tscn" id="14_76lrf"]
+[ext_resource type="AudioStream" uid="uid://b6hrob0ihffbe" path="res://Player/Audio/hit_player.wav" id="15_efx54"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wt17y"]
 
@@ -531,6 +531,8 @@ _data = {
 &"walk_up": SubResource("Animation_od3ui")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_755ss"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_wae3t"]
 
 [sub_resource type="Animation" id="Animation_12r3y"]
@@ -573,7 +575,7 @@ tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("15_bqksd")
+"stream": ExtResource("15_efx54")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -606,7 +608,7 @@ position = Vector2(-1, 1)
 collision_mask = 16
 motion_mode = 1
 wall_min_slide_angle = 0.17453292
-script = ExtResource("1_4ntmi")
+script = ExtResource("1_dkpta")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
@@ -616,13 +618,13 @@ shape = SubResource("CircleShape2D_wt17y")
 texture_filter = 1
 position = Vector2(0, -20)
 scale = Vector2(0.9166667, 1)
-texture = ExtResource("2_d5pnc")
+texture = ExtResource("2_lfmf2")
 hframes = 16
 vframes = 3
 
 [node name="AttackEffectSprite" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(0, 10)
-texture = ExtResource("3_85eyu")
+texture = ExtResource("3_pisgm")
 hframes = 12
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D/AttackEffectSprite"]
@@ -635,9 +637,9 @@ autoplay = "no_attack"
 modulate = Color(0, 0, 0, 0.78431374)
 show_behind_parent = true
 position = Vector2(0, 20)
-texture = ExtResource("4_gxll4")
+texture = ExtResource("4_b1ygp")
 
-[node name="AttackHurtBox" parent="Sprite2D" instance=ExtResource("10_35vjg")]
+[node name="AttackHurtBox" parent="Sprite2D" instance=ExtResource("5_o28un")]
 unique_name_in_owner = true
 position = Vector2(0, 34)
 scale = Vector2(1.0909091, 1)
@@ -654,24 +656,23 @@ libraries = {
 }
 
 [node name="StateMachine" type="Node" parent="."]
-script = ExtResource("3_btcbx")
+script = ExtResource("6_n471f")
 
 [node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource("4_gwnis")
+script = ExtResource("7_7emwf")
 
 [node name="Walk" type="Node" parent="StateMachine"]
-script = ExtResource("5_k53q1")
-move_speed = null
+script = ExtResource("8_hshwv")
 
 [node name="Attack" type="Node" parent="StateMachine"]
-script = ExtResource("6_w8ecf")
-attack_sound = ExtResource("8_su5ja")
+script = ExtResource("9_gpjlu")
+attack_sound = ExtResource("10_8mwp6")
 
 [node name="Stun" type="Node" parent="StateMachine"]
-script = ExtResource("11_3o0p1")
+script = ExtResource("11_qemgg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-script = ExtResource("11_jeege")
+script = ExtResource("12_8viyr")
 
 [node name="Audio" type="Node2D" parent="."]
 
@@ -680,9 +681,19 @@ max_polyphony = 4
 
 [node name="Interactions" type="Node2D" parent="."]
 position = Vector2(1, -1)
-script = ExtResource("10_bugwf")
+script = ExtResource("13_sm0op")
 
-[node name="HitBox" parent="." instance=ExtResource("13_4vt3h")]
+[node name="Area2D" type="Area2D" parent="Interactions"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Area2D"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_755ss")
+debug_color = Color(5.4869056e-06, 0.8501482, 0.017195385, 0.41960785)
+
+[node name="HitBox" parent="." instance=ExtResource("14_76lrf")]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
