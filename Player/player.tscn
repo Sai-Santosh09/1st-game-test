@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://6ule42j8g1yt"]
+[gd_scene load_steps=49 format=3 uid="uid://6ule42j8g1yt"]
 
 [ext_resource type="Script" uid="uid://cdhwtta44ndoy" path="res://Player/Scripts/player.gd" id="1_dkpta"]
 [ext_resource type="Texture2D" uid="uid://csemyd58b2mot" path="res://Player/Sprites/PlayerSprite02.png" id="2_lfmf2"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://dkhrjq6on1bd5" path="res://Player/Scripts/push_area.gd" id="14_lfmf2"]
 [ext_resource type="AudioStream" uid="uid://b6hrob0ihffbe" path="res://Player/Audio/hit_player.wav" id="15_efx54"]
 [ext_resource type="Script" uid="uid://dyiis3jd5os53" path="res://Player/Scripts/abilities/abilities.gd" id="17_pisgm"]
+[ext_resource type="PackedScene" uid="uid://pb4jbjdbvfvf" path="res://GeneralNodes/ItemMagnet/item_magnet.tscn" id="18_b1ygp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wt17y"]
 
@@ -608,15 +609,17 @@ _data = {
 &"default": SubResource("Animation_gv4ys")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_o28un"]
+radius = 25.0
+
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(-1, 1)
+position = Vector2(0, 1)
 collision_mask = 16
 motion_mode = 1
 wall_min_slide_angle = 0.17453292
 script = ExtResource("1_dkpta")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_wt17y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -677,15 +680,17 @@ attack_sound = ExtResource("10_8mwp6")
 script = ExtResource("11_qemgg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -1)
 script = ExtResource("12_8viyr")
 
 [node name="Audio" type="Node2D" parent="."]
+position = Vector2(0, -1)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio"]
 max_polyphony = 6
 
 [node name="Interactions" type="Node2D" parent="."]
-position = Vector2(1, -1)
+position = Vector2(0, -1)
 script = ExtResource("13_sm0op")
 
 [node name="Area2D" type="Area2D" parent="Interactions"]
@@ -710,10 +715,11 @@ shape = SubResource("RectangleShape2D_pisgm")
 debug_color = Color(0.9882353, 0, 0.96862745, 0.41960785)
 
 [node name="HitBox" parent="." instance=ExtResource("14_76lrf")]
+position = Vector2(0, -1)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(1, -7)
+position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_wae3t")
 debug_color = Color(0.9843137, 0.9882353, 0, 0.41960785)
 
@@ -724,3 +730,11 @@ libraries = {
 
 [node name="Abilities" type="Node" parent="."]
 script = ExtResource("17_pisgm")
+
+[node name="ItemMagnet" parent="." instance=ExtResource("18_b1ygp")]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemMagnet"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_o28un")
+debug_color = Color(0.8899166, 0.00025817336, 0.79628485, 0.41960785)
