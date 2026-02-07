@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://3jnnokf0c7ya" path="res://Levels/level_transition.tscn" id="3_plxya"]
 
 [node name="04" type="Node2D"]
+z_index = -1
 script = ExtResource("1_o78sa")
 
 [node name="Dungeon01" parent="." instance=ExtResource("2_6xun4")]

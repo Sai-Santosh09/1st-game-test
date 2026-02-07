@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://dx5gpd7328ydo"]
+
+[ext_resource type="Script" uid="uid://c7grt0shs7ns7" path="res://Items/item_effects/item_effect.gd" id="1_tdgsu"]
+[ext_resource type="Script" uid="uid://cmmh17r1gdq1l" path="res://Items/Scripts/item_data.gd" id="2_u6d1n"]
+[ext_resource type="Texture2D" uid="uid://b2rdkdwfytd5h" path="res://Items/Sprites/items.png" id="3_u6d1n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6d1n"]
+atlas = ExtResource("3_u6d1n")
+region = Rect2(224, 0, 32, 32)
+
+[resource]
+script = ExtResource("2_u6d1n")
+name = "Dungeon Key"
+description = "Opens the doors which are locked...."
+texture = SubResource("AtlasTexture_u6d1n")
+metadata/_custom_type_script = "uid://cmmh17r1gdq1l"
