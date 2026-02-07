@@ -1,6 +1,83 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcjdp1ypdygyd"]
+[gd_scene load_steps=10 format=3 uid="uid://bcjdp1ypdygyd"]
 
 [ext_resource type="Script" uid="uid://dsa0wbp4y7cl" path="res://Player/Scripts/abilities/boomerang.gd" id="1_7jyai"]
+[ext_resource type="Texture2D" uid="uid://cyj3d2s50ejkt" path="res://Player/Sprites/boomerang.png" id="2_q1tu1"]
+[ext_resource type="AudioStream" uid="uid://7eboqfg4ei26" path="res://Player/Audio/catch.wav" id="2_sj23e"]
+[ext_resource type="PackedScene" uid="uid://78osin78fkgk" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="3_j6qed"]
+[ext_resource type="AudioStream" uid="uid://mlm5o2o3b6u1" path="res://Player/Audio/boomerang.wav" id="4_5u3cr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j6qed"]
+radius = 13.0
+
+[sub_resource type="Animation" id="Animation_sj23e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_5u3cr"]
+resource_name = "boomerang"
+length = 0.3
+loop_mode = 1
+step = 0.0375
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0375, 0.075, 0.112500004, 0.15, 0.1875, 0.22500001, 0.26250002),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_liud0"]
+_data = {
+&"RESET": SubResource("Animation_sj23e"),
+&"boomerang": SubResource("Animation_5u3cr")
+}
 
 [node name="Boomerang" type="Node2D"]
 script = ExtResource("1_7jyai")
+catch_audio = ExtResource("2_sj23e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("2_q1tu1")
+hframes = 8
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -16)
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_j6qed")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_liud0")
+}
+autoplay = "boomerang"
+
+[node name="HurtBox" parent="." instance=ExtResource("3_j6qed")]
+collision_mask = 256
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_j6qed")
+debug_color = Color(0.9764706, 0, 0, 0.41960785)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_5u3cr")
+autoplay = true
