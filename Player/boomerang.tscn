@@ -88,6 +88,7 @@ autoplay = true
 
 [node name="ItemMagnet" parent="." instance=ExtResource("6_liud0")]
 position = Vector2(0, -16)
+magnet_strength = 4.0
 play_magnet_audio = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemMagnet"]

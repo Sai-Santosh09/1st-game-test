@@ -630,6 +630,12 @@ texture = ExtResource("2_lfmf2")
 hframes = 16
 vframes = 3
 
+[node name="ShadowSprite" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(0, 0, 0, 0.78431374)
+show_behind_parent = true
+position = Vector2(0, 20)
+texture = ExtResource("4_b1ygp")
+
 [node name="AttackEffectSprite" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(0, 10)
 texture = ExtResource("3_pisgm")
@@ -640,12 +646,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_wae3t")
 }
 autoplay = "no_attack"
-
-[node name="ShadowSprite" type="Sprite2D" parent="Sprite2D"]
-modulate = Color(0, 0, 0, 0.78431374)
-show_behind_parent = true
-position = Vector2(0, 20)
-texture = ExtResource("4_b1ygp")
 
 [node name="AttackHurtBox" parent="Sprite2D" instance=ExtResource("5_o28un")]
 unique_name_in_owner = true

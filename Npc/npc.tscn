@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://lvpfumdb0yyo"]
+
+[ext_resource type="Script" uid="uid://0nkiw6p7p3o5" path="res://Npc/Scripts/npc.gd" id="1_6bn5k"]
+[ext_resource type="Texture2D" uid="uid://bef6uoh0yvmig" path="res://Npc/Sprites/npc_sprite_02.png" id="2_obaio"]
+[ext_resource type="Texture2D" uid="uid://2job0hdpf3uc" path="res://Player/Sprites/Shadow.png" id="3_jpxuv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2svdn"]
+radius = 5.9980273
+height = 21.999958
+
+[node name="NPC" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_6bn5k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -20)
+texture = ExtResource("2_obaio")
+hframes = 15
+
+[node name="ShadowSprite" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(0, 0, 0, 1)
+show_behind_parent = true
+position = Vector2(0, 20)
+texture = ExtResource("3_jpxuv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+rotation = -1.5727577
+shape = SubResource("CapsuleShape2D_2svdn")

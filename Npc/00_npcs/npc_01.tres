@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://chq18xv2s7kpc"]
+
+[ext_resource type="Texture2D" uid="uid://1js55jitq8p8" path="res://Npc/Sprites/portraits/npc_portrait_01.png" id="1_1hydq"]
+[ext_resource type="Script" uid="uid://cu0td8q1g7bkb" path="res://Npc/Scripts/npc_resource.gd" id="1_maabi"]
+[ext_resource type="Texture2D" uid="uid://dqxq8iuqj0tah" path="res://Npc/Sprites/npc_sprite.png" id="3_gtwx6"]
+
+[resource]
+script = ExtResource("1_maabi")
+npc_name = "Aurex Velenmoor"
+sprite = ExtResource("3_gtwx6")
+portrait = ExtResource("1_1hydq")
+metadata/_custom_type_script = "uid://cu0td8q1g7bkb"

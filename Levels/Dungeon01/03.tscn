@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cl1m765r2yy25"]
+[gd_scene load_steps=9 format=3 uid="uid://cl1m765r2yy25"]
 
 [ext_resource type="Script" uid="uid://1jjtlrsmcmys" path="res://Levels/scripts/level.gd" id="1_ow6h8"]
 [ext_resource type="PackedScene" uid="uid://dowpkc0khu66a" path="res://tile maps/dungeon_01.tscn" id="2_0vfq5"]
+[ext_resource type="AudioStream" uid="uid://bc0ec83l3i0ax" path="res://Levels/music/example_music_03.ogg" id="2_0xeq1"]
 [ext_resource type="PackedScene" uid="uid://3jnnokf0c7ya" path="res://Levels/level_transition.tscn" id="3_mnmuo"]
 [ext_resource type="PackedScene" uid="uid://dxm1fl8rn6wjc" path="res://GeneralNodes/EnemyCounter/enemy_counter.tscn" id="4_mnmuo"]
 [ext_resource type="PackedScene" uid="uid://bfbl22iqitmia" path="res://Enemies/Slime/slime.tscn" id="5_yxc4f"]
@@ -10,6 +11,7 @@
 
 [node name="03" type="Node2D"]
 script = ExtResource("1_ow6h8")
+music = ExtResource("2_0xeq1")
 
 [node name="Dungeon01" parent="." instance=ExtResource("2_0vfq5")]
 z_index = -1
