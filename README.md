@@ -2,7 +2,7 @@
 
 **Balde of Dawn** is a 2D action‑adventure prototype built in **Godot 4.5.1**.  
 You explore small areas and dungeons, fight enemies, talk to NPCs, open chests, and test basic combat and interaction systems.  
-Most sprites, tiles and other assets are taken from online resources, mainly from the **Michael Games** YouTube channel.
+Most sprites, tiles and other assets are taken from online resources.
 
 ---
 
