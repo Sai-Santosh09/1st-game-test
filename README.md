@@ -32,7 +32,7 @@ You can change these in **Project → Project Settings → Input Map**.
 
 ## Game Flow Map
 
-A high‑level view of how the game works in Godot:
+A general view of how the game works in Godot:
 
 ```text
 Start project
