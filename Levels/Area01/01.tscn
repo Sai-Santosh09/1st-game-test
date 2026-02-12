@@ -48,7 +48,7 @@ item_data = ExtResource("7_th3kk")
 quantity = 10
 
 [node name="Slime" parent="." instance=ExtResource("9_b60gt")]
-position = Vector2(384, 105)
+position = Vector2(227, -34)
 hp = 2
 
 [node name="LevelTransition3" parent="." instance=ExtResource("4_4t7i1")]
