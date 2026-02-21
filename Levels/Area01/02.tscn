@@ -74,10 +74,15 @@ wait_time = 0.5
 
 [node name="PatrolLocation2" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("12_r3wde")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(67, 0)
+position = Vector2(70, 0)
 wait_time = 1.0
 
 [node name="PatrolLocation3" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("12_r3wde")]
 modulate = Color(0, 1, 0, 1)
 position = Vector2(68, -72)
+wait_time = 1.0
+
+[node name="PatrolLocation4" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("12_r3wde")]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(0, -72)
 wait_time = 1.0
