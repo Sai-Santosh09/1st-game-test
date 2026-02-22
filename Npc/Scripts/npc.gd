@@ -19,6 +19,7 @@ func _ready() -> void:
 	setup_npc()
 	if Engine.is_editor_hint():
 		return
+	gather_interactables()
 	do_behavior_enabled.emit()
 	pass
 
@@ -26,15 +27,57 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	move_and_slide()
 
+
+func gather_interactables() -> void:
+	for c in get_children():
+		if c is DialogInteraction:
+			c.player_interacted.connect( _on_player_interacted )
+			c.player_entered.connect( _on_player_entered )
+			c.player_exited.connect( _on_player_exited )
+			c.finished.connect( _on_interaction_finished )
+
+
+func _on_player_entered() -> void:
+	update_direction( PlayerManager.player.global_position )
+	state = "idle"
+	velocity = Vector2.ZERO
+	update_animation()
+	do_behavior = false
+
+
+func _on_player_exited() ->void:
+	do_behavior = true
+	do_behavior_enabled.emit()
+
+
+func _on_player_interacted() -> void:
+	update_direction( PlayerManager.player.global_position )
+	state = "idle"
+	velocity = Vector2.ZERO
+	update_animation()
+	do_behavior = false
+	pass
+
+
+func _on_interaction_finished() -> void:
+	state = "idle"
+	update_animation()
+	do_behavior = true
+	do_behavior_enabled.emit()
+	pass
+
+
 func update_animation() -> void:
 	animation.play( state + "_" + direction_name )
 
 
-
-
 func update_direction( target_position : Vector2 ) -> void:
+	if target_position == global_position:
+		return
+	
 	direction = global_position.direction_to( target_position )
 	update_direction_name()
+	
 	if direction_name == "side" and direction.x < 0:
 		sprite.flip_h = true
 	else:
@@ -49,6 +92,12 @@ func update_direction_name() -> void:
 		direction_name = "down"
 	elif direction.x > threshold || direction.x < -threshold:
 		direction_name = "side"
+	else:
+		if abs(direction.y) >= abs(direction.x):
+			direction_name = "down" if direction.y >= 0 else "up"
+		else:
+			direction_name = "side" 
+
 
 
 func setup_npc() -> void:
