@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://eh6oc7dntr2"]
+[gd_scene load_steps=10 format=3 uid="uid://eh6oc7dntr2"]
 
 [ext_resource type="Script" uid="uid://bcbo5jm1bx1dm" path="res://GUI/pause_menu/pause_menu.gd" id="1_4w82k"]
+[ext_resource type="FontFile" uid="uid://bvhdhmh6brju7" path="res://GUI/fonts/Abaddon Bold.ttf" id="2_dvxeg"]
 [ext_resource type="Texture2D" uid="uid://b2rdkdwfytd5h" path="res://Items/Sprites/items.png" id="2_yiq8o"]
 [ext_resource type="Script" uid="uid://c8w4rsjc3bv22" path="res://GUI/pause_menu/inventory/Scripts/inventory_ui.gd" id="3_36pfd"]
+[ext_resource type="FontFile" uid="uid://dge2ewb34lll6" path="res://GUI/fonts/m5x7.ttf" id="3_iqcer"]
 [ext_resource type="PackedScene" uid="uid://pc5nda8lr1bl" path="res://GUI/pause_menu/inventory/inventory_slot.tscn" id="3_rsqrg"]
 [ext_resource type="Resource" uid="uid://byleoyua0ac7b" path="res://GUI/pause_menu/inventory/player_inventory.tres" id="4_ewgu5"]
 
@@ -56,6 +58,7 @@ offset_right = -38.0
 offset_bottom = -74.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_dvxeg")
 text = "[ Paused ]"
 
 [node name="ItemDescription" type="Label" parent="Control"]
@@ -72,7 +75,8 @@ offset_right = 23.0
 offset_bottom = 57.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 10
+theme_override_fonts/font = ExtResource("3_iqcer")
+theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -92,21 +96,33 @@ data = ExtResource("4_ewgu5")
 
 [node name="InventorySlot" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_rsqrg")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dvxeg")
+theme_override_font_sizes/font_size = 16
 
 [node name="InventorySlot2" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_rsqrg")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dvxeg")
+theme_override_font_sizes/font_size = 16
 
 [node name="InventorySlot3" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_rsqrg")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dvxeg")
+theme_override_font_sizes/font_size = 16
 
 [node name="InventorySlot4" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_rsqrg")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dvxeg")
+theme_override_font_sizes/font_size = 16
 
 [node name="InventorySlot5" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_rsqrg")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dvxeg")
+theme_override_font_sizes/font_size = 16
 
 [node name="InventorySlot6" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_rsqrg")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dvxeg")
+theme_override_font_sizes/font_size = 16
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control"]
 layout_mode = 1
@@ -125,11 +141,13 @@ grow_vertical = 2
 [node name="Button_Save" type="Button" parent="Control/HBoxContainer"]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dvxeg")
 text = "Save"
 
 [node name="Button_Load" type="Button" parent="Control/HBoxContainer"]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dvxeg")
 text = "Load"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]

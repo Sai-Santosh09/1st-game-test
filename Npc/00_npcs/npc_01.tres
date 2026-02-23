@@ -9,4 +9,5 @@ script = ExtResource("1_maabi")
 npc_name = "Aurex Velenmoor"
 sprite = ExtResource("3_gtwx6")
 portrait = ExtResource("1_1hydq")
+dialog_audio_pitch = 0.5
 metadata/_custom_type_script = "uid://cu0td8q1g7bkb"
