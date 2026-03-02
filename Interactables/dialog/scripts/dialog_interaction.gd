@@ -33,6 +33,8 @@ func player_interact() -> void:
 	await get_tree().process_frame
 	await get_tree().process_frame
 	DialogSystem.show_dialog( dialog_items )
+	await DialogSystem.finished
+	finished.emit()
 	pass
 
 

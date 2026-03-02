@@ -47,6 +47,7 @@ func _on_player_entered() -> void:
 
 func _on_player_exited() ->void:
 	do_behavior = true
+	state = "walk"
 	do_behavior_enabled.emit()
 
 

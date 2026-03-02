@@ -75,6 +75,7 @@ func hide_dialog() -> void:
 	dialog_ui.visible = false
 	dialog_ui.process_mode = Node.PROCESS_MODE_DISABLED
 	get_tree().paused = false
+	finished.emit()
 	pass
 
 
