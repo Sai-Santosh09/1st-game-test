@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://drxktf2gcxs11"]
+[gd_scene load_steps=18 format=3 uid="uid://drxktf2gcxs11"]
 
 [ext_resource type="Script" uid="uid://1jjtlrsmcmys" path="res://Levels/scripts/level.gd" id="1_x70af"]
 [ext_resource type="PackedScene" uid="uid://c5wsm6ebjhilr" path="res://tile maps/grass-01.tscn" id="2_tek06"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://dl08bvo13qim8" path="res://Npc/npc_behavior_patrol.tscn" id="11_sci0f"]
 [ext_resource type="Resource" uid="uid://dsmigm3fywul" path="res://Npc/00_npcs/00_hero.tres" id="12_5l2i7"]
 [ext_resource type="PackedScene" uid="uid://byy1sqslbs1p6" path="res://Npc/patrol_location.tscn" id="12_r3wde"]
+[ext_resource type="Script" uid="uid://dxpsriu3mlght" path="res://Interactables/dialog/scripts/dialog_choice.gd" id="16_5l2i7"]
+[ext_resource type="Script" uid="uid://cb5n5wpgyk8h2" path="res://Interactables/dialog/scripts/dialog_branch.gd" id="17_xiy2e"]
 
 [node name="02" type="Node2D"]
 script = ExtResource("1_x70af")
@@ -116,5 +118,34 @@ enabled = true
 
 [node name="DialogText" type="Node" parent="NPC2/DialogInteraction"]
 script = ExtResource("11_mxs1d")
-text = "Damn it's a pleasure to meet the great hero."
+text = "Damn it's a pleasure to meet the great hero. Will you help me with my dance practice"
+metadata/_custom_type_script = "uid://1sfkun374vc7"
+
+[node name="DialogChoice" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("16_5l2i7")
+metadata/_custom_type_script = "uid://dxpsriu3mlght"
+
+[node name="DialogBranch" type="Node" parent="NPC2/DialogInteraction/DialogChoice"]
+script = ExtResource("17_xiy2e")
+text = "Hmm I'll think about it"
+metadata/_custom_type_script = "uid://cb5n5wpgyk8h2"
+
+[node name="DialogText" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("11_mxs1d")
+text = "Damn thank you my hero!!!"
+metadata/_custom_type_script = "uid://1sfkun374vc7"
+
+[node name="DialogText2" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("11_mxs1d")
+text = "Also I wanted to practice dancing with you in the dark dungeon but there seems to be a evil wizard lurking in the depths of the dungeon"
+metadata/_custom_type_script = "uid://1sfkun374vc7"
+
+[node name="DialogBranch2" type="Node" parent="NPC2/DialogInteraction/DialogChoice"]
+script = ExtResource("17_xiy2e")
+text = "Huh not even in your dreams "
+metadata/_custom_type_script = "uid://cb5n5wpgyk8h2"
+
+[node name="DialogText" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("11_mxs1d")
+text = "Geez!! what a lousy hero you are.. "
 metadata/_custom_type_script = "uid://1sfkun374vc7"
