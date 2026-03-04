@@ -45,6 +45,8 @@ func _on_selection_changed() -> void:
 				return
 			self.add_child( example_dialog )
 			example_dialog.offset = get_parent_global_position() + Vector2( 32, -200 )
+			check_npc_data()
+			_set_editor_display()
 	pass
 
 func get_parent_global_position() -> Vector2:
@@ -58,3 +60,7 @@ func get_parent_global_position() -> Vector2:
 			else:
 				_checking = false
 	return Vector2.ZERO
+
+
+func _set_editor_display() -> void:
+	pass
