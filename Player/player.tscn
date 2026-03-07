@@ -1,7 +1,7 @@
 [gd_scene load_steps=49 format=3 uid="uid://6ule42j8g1yt"]
 
 [ext_resource type="Script" uid="uid://cdhwtta44ndoy" path="res://Player/Scripts/player.gd" id="1_dkpta"]
-[ext_resource type="Texture2D" uid="uid://csemyd58b2mot" path="res://Player/Sprites/PlayerSprite02.png" id="2_lfmf2"]
+[ext_resource type="Texture2D" uid="uid://dg2d1f7u42qfk" path="res://Player/Sprites/player_sprite.png" id="2_b1ygp"]
 [ext_resource type="Texture2D" uid="uid://b2c4iaq5mgini" path="res://Player/Sprites/AttackSprite01.png" id="3_pisgm"]
 [ext_resource type="Texture2D" uid="uid://2job0hdpf3uc" path="res://Player/Sprites/Shadow.png" id="4_b1ygp"]
 [ext_resource type="PackedScene" uid="uid://78osin78fkgk" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="5_o28un"]
@@ -626,9 +626,9 @@ shape = SubResource("CircleShape2D_wt17y")
 texture_filter = 1
 position = Vector2(0, -20)
 scale = Vector2(0.9166667, 1)
-texture = ExtResource("2_lfmf2")
+texture = ExtResource("2_b1ygp")
 hframes = 16
-vframes = 3
+vframes = 8
 
 [node name="ShadowSprite" type="Sprite2D" parent="Sprite2D"]
 modulate = Color(0, 0, 0, 0.78431374)
@@ -737,4 +737,4 @@ position = Vector2(0, -16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemMagnet"]
 position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_o28un")
-debug_color = Color(0.8899166, 0.00025817336, 0.79628485, 0.41960785)
+debug_color = Color(0.8901186, 0, 0.79655224, 0)
