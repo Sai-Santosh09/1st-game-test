@@ -21,9 +21,27 @@ func _ready() -> void:
 func player_interact() -> void:
 	
 	if picked_up == false:
-		print("YEs")
+		
+		diasble_collisions( throwable )
+		if throwable.get_parent():
+			throwable.get_parent().remove_child( throwable )
+		PlayerManager.player.held_item.add_child( throwable )
+		throwable.position = Vector2.ZERO
+		PlayerManager.player.pickup_item( self )
+		area_entered.disconnect( _on_area_enter )
+		area_exited.disconnect( _on_area_exit )
 		pass
 	pass
+
+
+func diasble_collisions( _node : Node ) -> void:
+	for c in _node.get_children():
+		if c == self:
+			continue
+		if c is CollisionShape2D:
+			c.disabled = true
+		else:
+			diasble_collisions( c )
 
 
 func _on_area_enter( _a : Area2D ) -> void:
