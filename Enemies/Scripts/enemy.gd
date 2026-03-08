@@ -32,14 +32,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-
-
-
 func _physics_process(delta):
 	move_and_slide()
 
@@ -82,6 +74,7 @@ func _take_damage( hurt_box : HurtBox ) -> void:
 	if invulnerable == true:
 		return
 	hp -= hurt_box.damage
+	PlayerManager.shake_camera()
 	if hp > 0:
 		enemy_damaged.emit( hurt_box )
 	else:

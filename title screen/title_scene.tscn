@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://yk48mnhpfes7"]
+[gd_scene load_steps=14 format=3 uid="uid://yk48mnhpfes7"]
 
 [ext_resource type="Script" uid="uid://coa37vbf07gvs" path="res://title screen/title_scene.gd" id="1_a17wi"]
 [ext_resource type="PackedScene" uid="uid://dowpkc0khu66a" path="res://tile maps/dungeon_01.tscn" id="1_yxhny"]
@@ -9,6 +9,22 @@
 [ext_resource type="AudioStream" uid="uid://5jod17dx7dld" path="res://title screen/audio/menu_select.wav" id="4_2nvks"]
 [ext_resource type="FontFile" uid="uid://cqpduayl4x0fo" path="res://GUI/fonts/Abaddon Light.ttf" id="4_a17wi"]
 [ext_resource type="PackedScene" uid="uid://be3ek6w07ogid" path="res://Levels/player_spawn.tscn" id="6_2otlf"]
+[ext_resource type="PackedScene" uid="uid://57f3o5bvmiqs" path="res://Props/torches/torch_dungeon.tscn" id="7_mxrxg"]
+
+[sub_resource type="Animation" id="Animation_58b3r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_2otlf"]
 resource_name = "default"
@@ -25,21 +41,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
-}
-
-[sub_resource type="Animation" id="Animation_58b3r"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_chkw5"]
@@ -64,6 +65,14 @@ position = Vector2(64, 202)
 
 [node name="PushableStatue2" parent="props" instance=ExtResource("2_snw8e")]
 position = Vector2(416, 202)
+
+[node name="TorchDungeon" parent="props" instance=ExtResource("7_mxrxg")]
+process_mode = 3
+position = Vector2(64, 247)
+
+[node name="TorchDungeon2" parent="props" instance=ExtResource("7_mxrxg")]
+process_mode = 3
+position = Vector2(416, 248)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
