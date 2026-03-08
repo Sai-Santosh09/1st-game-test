@@ -11,3 +11,4 @@ script = ExtResource("1_7p4g0")
 
 [node name="HurtBox" parent="." instance=ExtResource("2_jakst")]
 collision_mask = 256
+damage = 2

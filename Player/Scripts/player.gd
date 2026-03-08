@@ -13,6 +13,7 @@ var direction : Vector2 = Vector2.ZERO
 @onready var audio: AudioStreamPlayer2D = $Audio/AudioStreamPlayer2D
 @onready var lift: State_Lift = $StateMachine/Lift
 @onready var held_item: Node2D = $Sprite2D/HeldItem
+@onready var carry: StateCarry = $StateMachine/Carry
 
 
 signal DirectionChanged( new_direction : Vector2 )
@@ -112,5 +113,5 @@ func MakeInvulnerable( _duration : float = 1.0 ) -> void:
 
 func pickup_item( _t : Throwable ) -> void:
 	state_machine.ChangeState( lift )
-	
+	carry.throwable = _t
 	pass

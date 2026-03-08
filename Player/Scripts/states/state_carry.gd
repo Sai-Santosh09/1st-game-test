@@ -28,6 +28,23 @@ func Enter() -> void:
 
 
 func Exit() -> void:
+	if throwable:
+		if player.direction == Vector2.ZERO:
+			throwable.throw_direction = player.cardinal_direction
+		else:
+			throwable.throw_direction = player.direction
+		
+		if state_machine.next_state == stun:
+			throwable.throw_direction = throwable.throw_direction.rotated( PI )
+			throwable.drop()
+			pass
+		else:
+			player.audio.stream = throw_audio
+			player.audio.play()
+			throwable.throw()
+			pass
+		
+		pass
 	pass
 
 

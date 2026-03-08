@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://6ule42j8g1yt"]
+[gd_scene load_steps=82 format=3 uid="uid://6ule42j8g1yt"]
 
 [ext_resource type="Script" uid="uid://cdhwtta44ndoy" path="res://Player/Scripts/player.gd" id="1_dkpta"]
 [ext_resource type="Texture2D" uid="uid://dg2d1f7u42qfk" path="res://Player/Sprites/player_sprite.png" id="2_b1ygp"]
@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://crjfugj6vo7h" path="res://Player/Audio/huwh.wav" id="18_8viyr"]
 [ext_resource type="PackedScene" uid="uid://pb4jbjdbvfvf" path="res://GeneralNodes/ItemMagnet/item_magnet.tscn" id="18_b1ygp"]
 [ext_resource type="Script" uid="uid://bvy6koar7a1nv" path="res://Player/Scripts/states/state_carry.gd" id="18_qemgg"]
+[ext_resource type="AudioStream" uid="uid://b1j5junl782hf" path="res://Player/Audio/throw.wav" id="20_sm0op"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wt17y"]
 
@@ -1553,6 +1554,7 @@ lift_audio = ExtResource("18_8viyr")
 
 [node name="Carry" type="Node" parent="StateMachine"]
 script = ExtResource("18_qemgg")
+throw_audio = ExtResource("20_sm0op")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -1)

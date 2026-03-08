@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://pe6m1ydy5wqo"]
+[gd_scene load_steps=12 format=3 uid="uid://pe6m1ydy5wqo"]
 
 [ext_resource type="Script" uid="uid://1jjtlrsmcmys" path="res://Levels/scripts/level.gd" id="1_22ele"]
 [ext_resource type="PackedScene" uid="uid://c5wsm6ebjhilr" path="res://tile maps/grass-01.tscn" id="1_vbl6q"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://chbpiwwxc5mp2" path="res://Items/stone.tres" id="7_th3kk"]
 [ext_resource type="PackedScene" uid="uid://bddn2owiiapkm" path="res://Enemies/goblin/goblin.tscn" id="9_b60gt"]
 [ext_resource type="AudioStream" uid="uid://dhnid2br4cdl6" path="res://Levels/music/example_music_01.ogg" id="10_f2d14"]
+[ext_resource type="PackedScene" uid="uid://6dlppqfo0wyr" path="res://Props/pots/pot.tscn" id="11_an23e"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_22ele")
@@ -57,3 +58,6 @@ level = "uid://bjwwwu4a7rnrj"
 center_player = true
 size = 3
 side = 2
+
+[node name="Pot" parent="." instance=ExtResource("11_an23e")]
+position = Vector2(309, 208)
