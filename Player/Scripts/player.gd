@@ -115,3 +115,8 @@ func pickup_item( _t : Throwable ) -> void:
 	state_machine.ChangeState( lift )
 	carry.throwable = _t
 	pass
+
+
+func revive_player() -> void:
+	update_hp( 99 )
+	state_machine.ChangeState( $StateMachine/Idle )

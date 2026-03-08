@@ -23,10 +23,10 @@ func _ready() -> void:
 	
 	hide_game_over_screen()
 	continue_button.focus_entered.connect( play_audio.bind( button_focus_audio ) )
-	#continue_button.pressed.connect( load_game )
+	continue_button.pressed.connect( load_game )
 	title_button.focus_entered.connect( play_audio.bind( button_focus_audio ) )
-	#title_button.pressed.connect( title_screen )
-	
+	title_button.pressed.connect( title_screen )
+	LevalManager.level_load_started.connect( hide_game_over_screen )
 	pass 
 
 
@@ -75,6 +75,26 @@ func hide_game_over_screen() -> void:
 	game_over.visible = false
 	game_over.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	game_over.modulate = Color( 1, 1, 1, 0 )
+
+
+func load_game() -> void:
+	play_audio( button_select_audio )
+	await fade_to_black()
+	SaveManager.load_game()
+	pass
+
+
+func title_screen() -> void:
+	play_audio( button_select_audio )
+	await fade_to_black()
+	LevalManager.load_new_level( "res://title screen/title_scene.tscn", "", Vector2.ZERO )
+
+
+func fade_to_black() -> bool:
+	animation_player.play( "fade_to_black" )
+	await animation_player.animation_finished
+	PlayerManager.player.revive_player()
+	return true
 
 
 func play_audio( _a : AudioStream ) -> void:
