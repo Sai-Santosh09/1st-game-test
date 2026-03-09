@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0drhliugake0"]
+
+[ext_resource type="Texture2D" uid="uid://b1eptkdxi28e5" path="res://Levels/Dungeon01/dark_wizard/sprites/energy-explosion.png" id="1_g70ni"]
+[ext_resource type="Material" uid="uid://uqkbsr015x5v" path="res://shaders and materials/light_material.tres" id="1_qfbo5"]
+
+[sub_resource type="Animation" id="Animation_qfbo5"]
+resource_name = "explode"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_n6ly3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d34vf"]
+_data = {
+&"RESET": SubResource("Animation_n6ly3"),
+&"explode": SubResource("Animation_qfbo5")
+}
+
+[node name="EnergyExplosion" type="Sprite2D"]
+z_index = 1
+material = ExtResource("1_qfbo5")
+texture = ExtResource("1_g70ni")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_d34vf")
+}
+autoplay = "explode"
