@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://bgnf4nwoubigm" path="res://GeneralNodes/PersistentDataHandler/persistent-data-handler.gd" id="1_1lgkx"]
 
-[node name="PersistentDataHandler" type="Node2D"]
+[node name="PersistentDataHandler" type="Node"]
 script = ExtResource("1_1lgkx")
