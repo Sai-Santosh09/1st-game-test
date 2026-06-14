@@ -18,10 +18,10 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("test"):
 		
-		update_quest("Short Quest", "")
-		update_quest("Find the Flute", "", true)
-		update_quest("Long Quest", "step 1")
-		update_quest("Long Quest", "step 2")
+		#update_quest("Short Quest", "")
+		#update_quest("Find the Flute", "", true)
+		#update_quest("Long Quest", "step 1")
+		#update_quest("Long Quest", "step 2")
 		print( "Quests : ", current_quests )
 		pass
 	pass
@@ -49,7 +49,7 @@ func update_quest( _title : String, _completed_step : String = "", _is_complete 
 		}
 		
 		if _completed_step != "":
-			new_quest.completed_steps.append( _completed_step )
+			new_quest.completed_steps.append( _completed_step.to_lower() )
 		
 		current_quests.append( new_quest )
 		quest_updated.emit( new_quest )
@@ -60,7 +60,7 @@ func update_quest( _title : String, _completed_step : String = "", _is_complete 
 		# Quest was found, update it
 		var q = current_quests[ quest_index ]
 		if _completed_step != "" and q.completed_steps.has( _completed_step ) == false:
-			q.completed_steps.append( _completed_step )
+			q.completed_steps.append( _completed_step.to_lower() )
 			pass
 		q.is_complete = _is_complete
 		
