@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bs6765tj7qv5o"]
+
+[ext_resource type="Script" uid="uid://bxta2tmh31tdw" path="res://quests/utility_nodes/quest_activated_switch.gd" id="1_1a44c"]
+[ext_resource type="Texture2D" uid="uid://8tk2bhc8x3x6" path="res://quests/utility_nodes/icons/quest_switch.png" id="2_rmkwn"]
+
+[node name="QuestActivatedSwitch" type="Node2D" unique_id=1082728091]
+script = ExtResource("1_1a44c")
+remove_when_activated = null
+react_to_global_signal = null
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=686151302]
+z_index = 10
+position = Vector2(-10, -19)
+texture = ExtResource("2_rmkwn")
