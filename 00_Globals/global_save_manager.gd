@@ -69,11 +69,7 @@ func update_player_data() -> void:
 
 
 func update_scene_path() -> void:
-	var p : String = ""
-	for c in get_tree().root.get_children():
-		if c is Level:
-			p = c.scene_file_path
-	current_save.scene_path = p
+	current_save.scene_path = get_current_level_path()
 
 
 func update_item_data() -> void:
@@ -88,6 +84,19 @@ func update_quest_data() -> void:
 func add_persistent_value( value : String ) -> void:
 	if check_persistent_value( value ) == false:
 		current_save.persistence.append( value )
+	pass
+
+
+func get_current_level_path() -> String:
+	for c in get_tree().root.get_children():
+		if c is Level:
+			return c.scene_file_path
+	return ""
+
+
+func remove_persistent_value( value : String ) -> void:
+	var p = current_save.persistence as Array
+	p.erase( value )
 	pass
 
 

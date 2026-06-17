@@ -8,6 +8,7 @@ signal is_activated_changed( v : bool )
 
 @export var check_type : CheckType = CheckType.HAS_QUEST : set = _set_check_type
 @export var remove_when_activated : bool = false
+@export var free_on_remove : bool = false
 @export var react_to_global_signal : bool = false
 
 
@@ -102,6 +103,8 @@ func hide_children() -> void:
 	for c in get_children():
 		c.set_deferred( "visible", false )
 		c.set_deferred( "process_mode" , Node.PROCESS_MODE_DISABLED )
+		if free_on_remove:
+			c.queue_free()
 
 
 func update_summary() -> void:

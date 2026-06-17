@@ -119,27 +119,37 @@ modulate = Color(0, 1, 1, 1)
 position = Vector2(0, -72)
 wait_time = 1.0
 
-[node name="DialogInteraction" parent="NPC2" unique_id=752223696 instance=ExtResource("10_r3wde")]
+[node name="QuestActivatedSwitch" parent="NPC2" unique_id=1082728091 instance=ExtResource("23_xflnv")]
+position = Vector2(0, -11)
+remove_when_activated = true
+react_to_global_signal = true
+linked_quest = ExtResource("19_wrnjp")
+settings_summary = "UPDATE QUEST:
+Quest: Find the Flute
+Checking if player has quest"
+
+[node name="DialogInteraction" parent="NPC2/QuestActivatedSwitch" unique_id=752223696 instance=ExtResource("10_r3wde")]
+position = Vector2(0, 11)
 enabled = true
 
-[node name="DialogText" type="Node" parent="NPC2/DialogInteraction" unique_id=335835180]
+[node name="DialogText" type="Node" parent="NPC2/QuestActivatedSwitch/DialogInteraction" unique_id=335835180]
 script = ExtResource("11_mxs1d")
 text = "Damn it's a pleasure to meet the great hero. Will you find my lost flute..."
 npc_info = ExtResource("10_krbdk")
 metadata/_custom_type_script = "uid://1sfkun374vc7"
 
-[node name="DialogChoice" type="Node" parent="NPC2/DialogInteraction" unique_id=1880619422]
+[node name="DialogChoice" type="Node" parent="NPC2/QuestActivatedSwitch/DialogInteraction" unique_id=1880619422]
 script = ExtResource("16_5l2i7")
 npc_info = ExtResource("10_krbdk")
 metadata/_custom_type_script = "uid://dxpsriu3mlght"
 
-[node name="DialogBranch" type="Node" parent="NPC2/DialogInteraction/DialogChoice" unique_id=1115553559]
+[node name="DialogBranch" type="Node" parent="NPC2/QuestActivatedSwitch/DialogInteraction/DialogChoice" unique_id=1115553559]
 script = ExtResource("17_xiy2e")
 text = "Hmm I'll help you with it so be grateful"
 npc_info = ExtResource("10_krbdk")
 metadata/_custom_type_script = "uid://cb5n5wpgyk8h2"
 
-[node name="QuestAdvanceTrigger" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch" unique_id=1831730233 instance=ExtResource("20_wrnjp")]
+[node name="QuestAdvanceTrigger" parent="NPC2/QuestActivatedSwitch/DialogInteraction/DialogChoice/DialogBranch" unique_id=1831730233 instance=ExtResource("20_wrnjp")]
 position = Vector2(496, 254)
 signal_name = "selected"
 linked_quest = ExtResource("19_wrnjp")
@@ -148,27 +158,45 @@ Quest: Find the Flute
 Step: 0 - N/A
 Complete: false"
 
-[node name="DialogText" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch" unique_id=155747506]
+[node name="DialogText" type="Node" parent="NPC2/QuestActivatedSwitch/DialogInteraction/DialogChoice/DialogBranch" unique_id=155747506]
 script = ExtResource("11_mxs1d")
 text = "Damn thank you my hero!!!"
 npc_info = ExtResource("10_krbdk")
 metadata/_custom_type_script = "uid://1sfkun374vc7"
 
-[node name="DialogText2" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch" unique_id=2037183833]
+[node name="DialogText2" type="Node" parent="NPC2/QuestActivatedSwitch/DialogInteraction/DialogChoice/DialogBranch" unique_id=2037183833]
 script = ExtResource("11_mxs1d")
 text = "Also I wanted to use this flute since ages but never did..."
 npc_info = ExtResource("10_krbdk")
 metadata/_custom_type_script = "uid://1sfkun374vc7"
 
-[node name="DialogBranch2" type="Node" parent="NPC2/DialogInteraction/DialogChoice" unique_id=990161709]
+[node name="DialogBranch2" type="Node" parent="NPC2/QuestActivatedSwitch/DialogInteraction/DialogChoice" unique_id=990161709]
 script = ExtResource("17_xiy2e")
 text = "Huh not even in your dreams "
 npc_info = ExtResource("10_krbdk")
 metadata/_custom_type_script = "uid://cb5n5wpgyk8h2"
 
-[node name="DialogText" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch2" unique_id=545635396]
+[node name="DialogText" type="Node" parent="NPC2/QuestActivatedSwitch/DialogInteraction/DialogChoice/DialogBranch2" unique_id=545635396]
 script = ExtResource("11_mxs1d")
 text = "Geez!! what a lousy hero you are.. You are more like a anti-hero.."
+npc_info = ExtResource("10_krbdk")
+metadata/_custom_type_script = "uid://1sfkun374vc7"
+
+[node name="QuestActivatedSwitch2" parent="NPC2" unique_id=1886527273 instance=ExtResource("23_xflnv")]
+position = Vector2(0, -28)
+react_to_global_signal = true
+linked_quest = ExtResource("19_wrnjp")
+settings_summary = "UPDATE QUEST:
+Quest: Find the Flute
+Checking if player has quest"
+
+[node name="DialogInteraction" parent="NPC2/QuestActivatedSwitch2" unique_id=553260935 instance=ExtResource("10_r3wde")]
+position = Vector2(0, 28)
+enabled = true
+
+[node name="DialogText" type="Node" parent="NPC2/QuestActivatedSwitch2/DialogInteraction" unique_id=2042933862]
+script = ExtResource("11_mxs1d")
+text = "Thank you Hero!! I lost my flute in the cave to the north..."
 npc_info = ExtResource("10_krbdk")
 metadata/_custom_type_script = "uid://1sfkun374vc7"
 
@@ -186,9 +214,8 @@ Quest: Long Quest
 Step: 0 - N/A
 Complete: false"
 
-[node name="QuestActivatedSwitch" parent="." unique_id=1082728091 instance=ExtResource("23_xflnv")]
+[node name="QuestActivatedSwitch" parent="." unique_id=1259651406 instance=ExtResource("23_xflnv")]
 position = Vector2(450, 129)
-remove_when_activated = false
 react_to_global_signal = true
 linked_quest = ExtResource("21_2rucc")
 settings_summary = "UPDATE QUEST:
@@ -209,7 +236,6 @@ Complete: false"
 [node name="QuestActivatedSwitch2" parent="." unique_id=1758883532 instance=ExtResource("23_xflnv")]
 position = Vector2(493, 129)
 check_type = 2
-remove_when_activated = false
 react_to_global_signal = true
 linked_quest = ExtResource("21_2rucc")
 quest_step = 2
