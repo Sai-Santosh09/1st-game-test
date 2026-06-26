@@ -31,6 +31,7 @@ SaveManager="*res://00_Globals/global_save_manager.gd"
 PauseMenu="*res://GUI/pause_menu/pause_menu.tscn"
 DialogSystem="*res://GUI/dialog_system/dialog_system.tscn"
 QuestManager="*uid://wb5t05iod30i"
+EffectManager="*uid://dcb2kocdcl4qr"
 
 [display]
 
