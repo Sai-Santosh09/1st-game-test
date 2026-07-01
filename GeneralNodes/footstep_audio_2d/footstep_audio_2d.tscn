@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cfi8hirphjyl6"]
+
+[ext_resource type="Script" uid="uid://03xrjw1d00ed" path="res://GeneralNodes/footstep_audio_2d/footstep_audio_2d.gd" id="1_4u1wu"]
+[ext_resource type="AudioStream" uid="uid://cmuqt74wypyk2" path="res://GeneralNodes/footstep_audio_2d/footstep_03.wav" id="1_l4oj7"]
+[ext_resource type="AudioStream" uid="uid://bgj7u0td17u6m" path="res://GeneralNodes/footstep_audio_2d/footstep_02.wav" id="3_g00hv"]
+[ext_resource type="AudioStream" uid="uid://c3h7fomogr0k3" path="res://GeneralNodes/footstep_audio_2d/footstep_01.wav" id="4_84732"]
+
+[node name="FootstepAudio2D" type="AudioStreamPlayer2D" unique_id=828537820]
+stream = ExtResource("1_l4oj7")
+script = ExtResource("1_4u1wu")
+footstep_variants = Array[AudioStream]([ExtResource("1_l4oj7"), ExtResource("3_g00hv"), ExtResource("4_84732")])

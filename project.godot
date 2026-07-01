@@ -45,6 +45,10 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[global_group]
+
+tilemaps="Tilemaps with footstep sounds, etc.."
+
 [gui]
 
 theme/custom_font="uid://cqpduayl4x0fo"
